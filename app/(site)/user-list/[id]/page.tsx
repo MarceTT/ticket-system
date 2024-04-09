@@ -47,11 +47,9 @@ const UserEdit = () => {
 
   const handleBlockToggle = async () => {
     try {
-      // Suponiendo que 'userId' es el ID del usuario que quieres bloquear/desbloquear
       const updatedStatus = !isBlocked;
       const response = await UpdateStatusAccont(dataUser?.id as string, updatedStatus);
       
-      // Actualiza el estado según la respuesta del servidor
       if (response.success) {
         toast.success(response.message, {
           duration: 2000,
@@ -63,7 +61,6 @@ const UserEdit = () => {
       }
     } catch (error) {
       console.error(error);
-      // Aquí podrías establecer algún estado de error para mostrar un mensaje al usuario
     }
   };
 
@@ -128,7 +125,7 @@ const UserEdit = () => {
                   <EyeOff className="mt-5 ml-2 h-6 w-6 cursor-pointer text-sm font-semibold text-gray-600 underline decoration-2" />
                 </div>
                 <p className="mt-2">
-                  Can't remember your current password.{" "}
+                  Can&apos;t remember your current password.{" "}
                   <a
                     className="text-sm font-semibold text-blue-600 underline decoration-2"
                     href="#"
